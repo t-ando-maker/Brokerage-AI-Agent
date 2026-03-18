@@ -1,0 +1,294 @@
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 20, 40, 0.52);
+  z-index: 20;
+  display: flex;
+  align-items: flex-end;
+}
+
+.panel {
+  background: #fff;
+  width: 100%;
+  height: 78%;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -8px 32px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid #e5e7ef;
+  flex-shrink: 0;
+  background: #fafbff;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.panelTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.statusSelect {
+  font-size: 12px;
+  padding: 4px 8px;
+  border: 1px solid #e2e5ee;
+  border-radius: 6px;
+  color: #374151;
+  background: #f8f9fb;
+  cursor: pointer;
+  outline: none;
+  font-family: inherit;
+}
+
+.statusSelect:focus {
+  border-color: #4f6ef7;
+}
+
+.closeBtn {
+  background: none;
+  border: 1px solid #e2e5ee;
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 12px;
+  color: #6b7280;
+  cursor: pointer;
+}
+
+.closeBtn:hover {
+  background: #f5f6fa;
+}
+
+.body {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.cols {
+  display: flex;
+  gap: 0;
+  min-height: 100%;
+}
+
+.leftCol {
+  width: 46%;
+  padding: 16px 18px;
+  border-right: 1px solid #e8eaf0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.rightCol {
+  flex: 1;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.section {
+  background: #f8f9fb;
+  border: 1px solid #e8eaf0;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.sectionTitle {
+  font-size: 12px;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.categoryBadge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.taskList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.taskItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.taskCheck {
+  color: #9ca3af;
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.docGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.docTag {
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 9px;
+  border-radius: 4px;
+}
+
+.notesSection {
+  background: #fffbeb;
+  border-color: #fcd34d;
+}
+
+.notesText {
+  font-size: 13px;
+  color: #78350f;
+  line-height: 1.7;
+}
+
+.completionSection {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.completionText {
+  font-size: 13px;
+  color: #166534;
+  line-height: 1.6;
+}
+
+.escalateSection {
+  background: #fdf2f8;
+  border-color: #fbcfe8;
+}
+
+.escalateText {
+  font-size: 13px;
+  color: #831843;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.escalateBtn {
+  background: #9d174d;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.escalateBtn:hover {
+  background: #831843;
+}
+
+.emptyTemplates {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.templateList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.templateCard {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid #e2e5ee;
+  border-radius: 7px;
+  padding: 10px 12px;
+  transition: border-color 0.12s, box-shadow 0.12s;
+}
+
+.templateCard:hover {
+  border-color: #a5b4fc;
+  box-shadow: 0 2px 8px rgba(79,110,247,0.08);
+}
+
+.templateInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.templateName {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e2433;
+  margin-bottom: 2px;
+}
+
+.templateDesc {
+  font-size: 11px;
+  color: #9ca3af;
+  margin-bottom: 4px;
+}
+
+.templateNote {
+  font-size: 11px;
+  color: #6b7280;
+  line-height: 1.5;
+  display: flex;
+  gap: 4px;
+  padding: 5px 8px;
+  background: #f9fafb;
+  border-radius: 4px;
+  border-left: 2px solid #e5e7eb;
+}
+
+.noteIcon {
+  flex-shrink: 0;
+}
+
+.templateBtn {
+  background: #f0f3ff;
+  border: 1px solid #c7d2fe;
+  border-radius: 5px;
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #4f6ef7;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: inherit;
+  flex-shrink: 0;
+  align-self: flex-start;
+  margin-top: 2px;
+}
+
+.templateBtn:hover {
+  background: #e0e7ff;
+}

@@ -1,0 +1,241 @@
+.pane {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid #e5e7ef;
+  flex-shrink: 0;
+}
+
+.title { font-size: 13px; font-weight: 700; color: #374151; letter-spacing: 0.02em; }
+
+.createBtn {
+  background: #4f6ef7;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.createBtn:hover { background: #3b5bdb; }
+
+.searchWrap {
+  padding: 10px 12px;
+  border-bottom: 1px solid #f0f2f5;
+  flex-shrink: 0;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 7px 12px;
+  border: 1px solid #e2e5ee;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #374151;
+  background: #f8f9fb;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.searchInput:focus { border-color: #4f6ef7; background: #fff; }
+
+.list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 6px 0 0;
+}
+
+.empty {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 13px;
+  padding: 24px 16px;
+}
+
+/* ─── 案件行 ─── */
+.caseItem {
+  padding: 10px 16px 8px;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: background 0.12s, border-color 0.12s;
+  border-bottom: 1px solid #f5f6fa;
+}
+.caseItem:hover { background: #f5f7ff; }
+.caseItem.selected {
+  background: #f0f3ff;
+  border-left-color: #4f6ef7;
+}
+
+.caseTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+.caseName { font-size: 13px; font-weight: 600; color: #1e2433; line-height: 1.4; flex: 1; }
+.statusBadge { font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 4px; white-space: nowrap; flex-shrink: 0; }
+
+.caseMeta { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; flex-wrap: wrap; }
+.sideBadge { font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 4px; }
+.propType  { font-size: 11px; color: #6b7280; background: #f3f4f6; padding: 2px 6px; border-radius: 3px; }
+.price     { font-size: 11px; color: #374151; font-weight: 500; }
+
+.caseStageRow { display: flex; align-items: center; gap: 4px; }
+.stageLabel   { font-size: 10px; color: #9ca3af; }
+.stageName    { font-size: 11px; color: #4b5563; font-weight: 500; }
+
+.completedItem { opacity: 0.72; }
+.completedItem:hover { opacity: 1; }
+.caseClosedDate { font-size: 10px; color: #10b981; font-weight: 500; }
+
+/* ─── サマリー展開パネル ─── */
+.summary {
+  background: #f5f7ff;
+  border-left: 3px solid #4f6ef7;
+  border-bottom: 1px solid #e0e4f8;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.summaryRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.summarySection {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.summaryLabel {
+  font-size: 10px;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.summaryLabelRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.summaryValue {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1e2433;
+}
+
+.summaryDocCount {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.summaryList { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+
+.summaryListItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 11px;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.summaryDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #4f6ef7;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.uncollectedList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.uncollectedTag {
+  font-size: 10px;
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 2px 7px;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.allCollected {
+  font-size: 11px;
+  color: #065f46;
+}
+
+.completionNoteSection {
+  background: #f0fdf4;
+  border-radius: 5px;
+  padding: 6px 8px;
+}
+
+.completionNoteText {
+  font-size: 11px;
+  color: #166534;
+  line-height: 1.6;
+}
+
+/* ─── セクションヘッダー ─── */
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px 5px;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1;
+  border-bottom: 1px solid #f0f2f5;
+}
+.sectionHeaderClickable { cursor: pointer; }
+.sectionHeaderClickable:hover { background: #f8f9fb; }
+
+.sectionLabel {
+  font-size: 10px;
+  font-weight: 700;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex: 1;
+}
+.sectionCount {
+  background: #f3f4f6;
+  color: #6b7280;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 7px;
+  border-radius: 10px;
+}
+.toggleIcon { font-size: 9px; color: #9ca3af; margin-left: 2px; }
+
+.completedHint {
+  padding: 8px 16px;
+  font-size: 11px;
+  color: #6b7280;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f2f5;
+}
+.completedHint:hover { background: #f8f9fb; color: #4f6ef7; }

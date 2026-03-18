@@ -1,0 +1,269 @@
+.pane {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.emptyIcon  { font-size: 48px; opacity: 0.4; }
+.emptyTitle { font-size: 16px; font-weight: 600; color: #6b7280; }
+.emptyDesc  { font-size: 13px; color: #9ca3af; }
+
+/* ─── 案件ヘッダー ─── */
+.caseHeader {
+  background: #fff;
+  border-bottom: 1px solid #e5e7ef;
+  padding: 12px 18px 10px;
+  flex-shrink: 0;
+}
+
+.caseHeaderTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.caseTitle { font-size: 15px; font-weight: 700; color: #1a1a2e; line-height: 1.3; }
+
+.badges { display: flex; gap: 6px; flex-shrink: 0; align-items: center; }
+.badge  { font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 5px; }
+
+.editBtn {
+  font-size: 11px;
+  padding: 3px 9px;
+  border: 1px solid #e2e5ee;
+  border-radius: 5px;
+  background: #fff;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+.editBtn:hover { background: #f0f2f5; }
+.editBtnActive { background: #eef1ff; color: #4f6ef7; border-color: #c7d2fe; }
+
+.caseMeta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+.metaItem { font-size: 11px; color: #6b7280; }
+
+.metaEmpty {
+  font-size: 11px;
+  color: #c0c5d0;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.metaEmptyBtn {
+  font-size: 11px;
+  color: #4f6ef7;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+/* ─── 編集パネル ─── */
+.editPanel {
+  background: #f8f9fb;
+  border: 1px solid #e2e5ee;
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 8px;
+}
+
+.editPanelTitle {
+  font-size: 12px;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e5e7ef;
+}
+
+.editGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.editField {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.editLabel {
+  font-size: 10px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.editInput, .editSelect {
+  padding: 5px 8px;
+  border: 1px solid #e2e5ee;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #1e2433;
+  background: #fff;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.12s;
+}
+.editInput:focus, .editSelect:focus { border-color: #4f6ef7; }
+
+.editActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid #e5e7ef;
+}
+
+.editCancelBtn {
+  font-size: 12px;
+  padding: 5px 14px;
+  border: 1px solid #e2e5ee;
+  border-radius: 5px;
+  background: #fff;
+  color: #6b7280;
+  cursor: pointer;
+}
+.editCancelBtn:hover { background: #f5f6fa; }
+
+.editSaveBtn {
+  font-size: 12px;
+  padding: 5px 16px;
+  border: none;
+  border-radius: 5px;
+  background: #4f6ef7;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.editSaveBtn:hover { background: #3b5bdb; }
+
+.progressBar {
+  height: 4px;
+  background: #e5e7ef;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 3px;
+}
+.progressInner {
+  height: 100%;
+  background: #4f6ef7;
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+.progressLabel { font-size: 10px; color: #9ca3af; text-align: right; }
+
+/* ─── 共通ペイン ─── */
+.topSection {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  flex-shrink: 0;
+  min-height: 60px;
+  background: #fff;
+}
+
+.bottomSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 60px;
+  background: #f8f9fb;
+}
+
+.paneLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px 5px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #f0f2f5;
+  flex-shrink: 0;
+  background: #fafbff;
+}
+
+.paneLabelHint {
+  font-size: 10px;
+  font-weight: 400;
+  color: #c4c8d4;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.selectedStageName {
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+  text-transform: none;
+  letter-spacing: 0;
+  background: #eef1ff;
+  color: #4f6ef7;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.scrollArea {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* ─── 詳細エリア空状態 ─── */
+.detailEmpty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 100%;
+  min-height: 80px;
+  font-size: 12px;
+  color: #9ca3af;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.detailEmptyIcon { font-size: 28px; opacity: 0.5; }
+
+/* ─── 水平ドラッグハンドル ─── */
+.hDivider {
+  height: 8px;
+  flex-shrink: 0;
+  cursor: row-resize;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  transition: background 0.15s;
+  z-index: 5;
+}
+.hDivider:hover { background: #eef1ff; }
+
+.hDividerLine {
+  height: 2px;
+  width: 100%;
+  background: #dde0ea;
+  transition: background 0.15s, height 0.15s;
+}
+.hDivider:hover .hDividerLine { background: #4f6ef7; height: 3px; }
