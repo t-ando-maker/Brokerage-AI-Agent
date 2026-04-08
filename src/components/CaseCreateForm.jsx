@@ -12,7 +12,13 @@ const INITIAL = {
   address: '',
   loanRequired: false,
   brokerageType: '専任媒介',
+  hasMortgage: false,
+  planRenovation: false,
+  renovationLoan: false,
+  isOwnerChange: false,
 };
+
+const INVESTMENT_TYPES = ['一棟マンション', '一棟アパート'];
 
 export default function CaseCreateForm({ onSubmit, onCancel }) {
   const [form, setForm] = useState(INITIAL);
@@ -36,17 +42,19 @@ export default function CaseCreateForm({ onSubmit, onCancel }) {
     onSubmit(form);
   };
 
+  const isInvestment = INVESTMENT_TYPES.includes(form.propertyType);
+
   return (
     <div className={styles.overlay}>
       <div className={styles.modal}>
         <div className={styles.modalHeader}>
-          <span className={styles.modalTitle}>新規案件作成</span>
+          <span className={styles.modalTitle}>業務プロセスを生成</span>
           <button className={styles.closeBtn} onClick={onCancel}>✕</button>
         </div>
         <form onSubmit={handleSubmit} className={styles.form}>
 
           {/* ─── 必須：顧客情報 ─── */}
-          <div className={styles.sectionLabel}>顧客情報 <span className={styles.sectionNote}>（初回面談前でも登録できます）</span></div>
+          <div className={styles.sectionLabel}>案件・顧客情報 <span className={styles.sectionNote}>（入力情報から業務プロセスを自動生成します）</span></div>
 
           <div className={styles.row}>
             <div className={styles.field} style={{ flex: 2 }}>
@@ -149,12 +157,119 @@ export default function CaseCreateForm({ onSubmit, onCancel }) {
                   <option>あり</option>
                 </select>
               </div>
+
+              {/* ─── 物件固有の条件 ─── */}
+              <div className={styles.conditionsSection}>
+                <div className={styles.sectionLabel}>物件固有の条件 <span className={styles.sectionNote}>（必要な書類の精度が上がります）</span></div>
+
+                <div className={styles.conditionsGrid}>
+                  {/* 抵当権の有無（売主側） */}
+                  {form.side === '売主側' && (
+                    <label className={styles.conditionItem}>
+                      <div className={styles.conditionLabel}>
+                        <span className={styles.conditionIcon}>🏦</span>
+                        <div>
+                          <div className={styles.conditionName}>抵当権の有無</div>
+                          <div className={styles.conditionNote}>売主の物件に抵当権（住宅ローン等）がある場合</div>
+                        </div>
+                      </div>
+                      <div className={styles.conditionToggle}>
+                        <button
+                          type="button"
+                          className={`${styles.toggleBtn} ${!form.hasMortgage ? styles.toggleBtnActive : ''}`}
+                          onClick={() => set('hasMortgage', false)}
+                        >なし</button>
+                        <button
+                          type="button"
+                          className={`${styles.toggleBtn} ${form.hasMortgage ? styles.toggleBtnActiveOn : ''}`}
+                          onClick={() => set('hasMortgage', true)}
+                        >あり</button>
+                      </div>
+                    </label>
+                  )}
+
+                  {/* リノベーション計画（買主側） */}
+                  {form.side === '買主側' && (
+                    <label className={styles.conditionItem}>
+                      <div className={styles.conditionLabel}>
+                        <span className={styles.conditionIcon}>🔨</span>
+                        <div>
+                          <div className={styles.conditionName}>購入後にリノベーションを行うか</div>
+                          <div className={styles.conditionNote}>内見時の管理規約確認・工事範囲の検討に影響します</div>
+                        </div>
+                      </div>
+                      <div className={styles.conditionToggle}>
+                        <button
+                          type="button"
+                          className={`${styles.toggleBtn} ${!form.planRenovation ? styles.toggleBtnActive : ''}`}
+                          onClick={() => { set('planRenovation', false); set('renovationLoan', false); }}
+                        >なし</button>
+                        <button
+                          type="button"
+                          className={`${styles.toggleBtn} ${form.planRenovation ? styles.toggleBtnActiveOn : ''}`}
+                          onClick={() => set('planRenovation', true)}
+                        >あり</button>
+                      </div>
+                    </label>
+                  )}
+
+                  {/* リノベローン（planRenovation=true のとき表示） */}
+                  {form.side === '買主側' && form.planRenovation && (
+                    <label className={styles.conditionItem}>
+                      <div className={styles.conditionLabel}>
+                        <span className={styles.conditionIcon}>💳</span>
+                        <div>
+                          <div className={styles.conditionName}>リノベ費用をローンに含めるか</div>
+                          <div className={styles.conditionNote}>「あり」の場合、リノベ一体型ローンの手続きが追加されます</div>
+                        </div>
+                      </div>
+                      <div className={styles.conditionToggle}>
+                        <button
+                          type="button"
+                          className={`${styles.toggleBtn} ${!form.renovationLoan ? styles.toggleBtnActive : ''}`}
+                          onClick={() => set('renovationLoan', false)}
+                        >なし</button>
+                        <button
+                          type="button"
+                          className={`${styles.toggleBtn} ${form.renovationLoan ? styles.toggleBtnActiveOn : ''}`}
+                          onClick={() => set('renovationLoan', true)}
+                        >あり</button>
+                      </div>
+                    </label>
+                  )}
+
+                  {/* オーナーチェンジ（売主側のみ） */}
+                  {form.side === '売主側' && (
+                    <label className={`${styles.conditionItem} ${!isInvestment ? styles.conditionItemDim : ''}`}>
+                      <div className={styles.conditionLabel}>
+                        <span className={styles.conditionIcon}>🏢</span>
+                        <div>
+                          <div className={styles.conditionName}>オーナーチェンジ</div>
+                          <div className={styles.conditionNote}>現在入居者がいる状態での売買（賃貸借契約書が必要）</div>
+                        </div>
+                      </div>
+                      <div className={styles.conditionToggle}>
+                        <button
+                          type="button"
+                          className={`${styles.toggleBtn} ${!form.isOwnerChange ? styles.toggleBtnActive : ''}`}
+                          onClick={() => set('isOwnerChange', false)}
+                        >なし</button>
+                        <button
+                          type="button"
+                          className={`${styles.toggleBtn} ${form.isOwnerChange ? styles.toggleBtnActiveOn : ''}`}
+                          onClick={() => set('isOwnerChange', true)}
+                        >あり</button>
+                      </div>
+                    </label>
+                  )}
+                </div>
+              </div>
             </div>
           )}
 
           <div className={styles.actions}>
             <button type="button" className={styles.cancelBtn} onClick={onCancel}>キャンセル</button>
-            <button type="submit" className={styles.submitBtn}>案件を作成</button>
+            <button type="submit" className={styles.submitBtn}>業務プロセスを生成</button>
           </div>
         </form>
       </div>

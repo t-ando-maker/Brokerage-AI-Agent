@@ -2,188 +2,115 @@
   padding: 12px 16px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  min-height: 100%;
-}
-
-/* ステータスバー */
-.statusBar {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 7px 10px;
-  background: #fff;
-  border: 1px solid #e8eaf0;
-  border-radius: 7px;
-}
-
-.statusBarLabel {
-  font-size: 11px;
-  font-weight: 600;
-  color: #6b7280;
-}
-
-.statusSelect {
-  font-size: 12px;
-  padding: 4px 8px;
-  border: 1px solid #e2e5ee;
-  border-radius: 5px;
-  color: #374151;
-  background: #f8f9fb;
-  cursor: pointer;
-  outline: none;
-  font-family: inherit;
-}
-.statusSelect:focus { border-color: #4f6ef7; }
-
-.escalateBadge {
-  font-size: 10px;
-  font-weight: 600;
-  background: #fdf2f8;
-  color: #9d174d;
-  padding: 3px 8px;
-  border-radius: 4px;
-  margin-left: auto;
-}
-
-/* 2カラムレイアウト */
-.cols {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-}
-
-.leftCol {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
   gap: 10px;
-  min-width: 0;
 }
 
-.rightCol {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  min-width: 0;
-}
-
-/* セクション */
 .section {
   background: #fff;
   border: 1px solid #e8eaf0;
   border-radius: 8px;
-  padding: 11px 13px;
+  padding: 12px 14px;
 }
 
 .sectionTitle {
   font-size: 11px;
   font-weight: 700;
   color: #374151;
-  margin-bottom: 9px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   gap: 6px;
   letter-spacing: 0.02em;
 }
 
-.categoryBadge {
-  font-size: 10px;
-  font-weight: 600;
-  padding: 2px 8px;
-  border-radius: 10px;
-}
-
-/* タスクリスト */
-.taskList { list-style: none; display: flex; flex-direction: column; gap: 7px; }
-
-.taskItem {
+/* ─── 統合タスク＋テンプレートリスト ─── */
+.taskList {
   display: flex;
-  align-items: flex-start;
-  gap: 7px;
-  font-size: 12px;
-  color: #374151;
-  line-height: 1.5;
+  flex-direction: column;
+  gap: 2px;
 }
 
-.checkbox { color: #9ca3af; font-size: 13px; flex-shrink: 0; margin-top: 1px; }
-
-/* 書類タグ */
-.docGrid { display: flex; flex-wrap: wrap; gap: 5px; }
-
-.docTag {
-  background: #e0f2fe;
-  color: #0369a1;
-  font-size: 11px;
-  font-weight: 500;
-  padding: 3px 8px;
-  border-radius: 4px;
-}
-
-/* 完了条件 */
-.completionSection { background: #f0fdf4; border-color: #bbf7d0; }
-.completionText    { font-size: 12px; color: #166534; line-height: 1.6; }
-
-/* 本社確認 */
-.escalateSection { background: #fdf2f8; border-color: #fbcfe8; }
-.escalateText    { font-size: 12px; color: #831843; line-height: 1.6; margin-bottom: 9px; }
-
-.escalateBtn {
-  background: #9d174d;
-  color: #fff;
-  border: none;
+.taskRow {
   border-radius: 5px;
-  padding: 6px 14px;
-  font-size: 11px;
-  font-weight: 600;
-  cursor: pointer;
-  font-family: inherit;
+  transition: background 0.1s;
 }
-.escalateBtn:hover { background: #831843; }
 
-/* テンプレート */
-.emptyTemplates { font-size: 12px; color: #9ca3af; }
+.taskRow:hover {
+  background: #f8f9fb;
+}
 
-.templateList { display: flex; flex-direction: column; gap: 7px; }
-
-.templateCard {
+.taskMain {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
-  gap: 10px;
-  background: #fafbff;
-  border: 1px solid #e8eaf0;
-  border-radius: 6px;
-  padding: 9px 11px;
-  transition: border-color 0.12s, box-shadow 0.12s;
-}
-.templateCard:hover {
-  border-color: #a5b4fc;
-  box-shadow: 0 1px 6px rgba(79,110,247,0.08);
+  gap: 8px;
+  padding: 7px 6px;
 }
 
-.templateInfo { flex: 1; min-width: 0; }
+.taskCheck {
+  color: #d1d5db;
+  font-size: 13px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  line-height: 1.4;
+}
 
-.templateName { font-size: 12px; font-weight: 600; color: #1e2433; margin-bottom: 2px; }
-.templateDesc { font-size: 11px; color: #9ca3af; margin-bottom: 4px; }
+.taskBody {
+  flex: 1;
+  min-width: 0;
+}
 
-.templateNote {
+.taskName {
+  font-size: 13px;
+  color: #1e2433;
+  font-weight: 500;
+  line-height: 1.4;
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+/* ─── カテゴリバッジ ─── */
+.catBadge {
+  display: inline-block;
   font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
+.badgeCreate  { background: #dbeafe; color: #1d4ed8; }
+.badgeGet     { background: #d1fae5; color: #065f46; }
+.badgeRequest { background: #ffedd5; color: #c2410c; }
+.badgeCheck   { background: #f3f4f6; color: #4b5563; }
+.badgeSubmit  { background: #ede9fe; color: #6d28d9; }
+
+.taskNote {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  margin-top: 4px;
+  font-size: 11px;
   color: #6b7280;
   line-height: 1.5;
-  display: flex;
-  gap: 4px;
-  padding: 4px 7px;
   background: #f3f4f6;
   border-radius: 4px;
+  padding: 4px 7px;
 }
 
+.noteIcon {
+  flex-shrink: 0;
+  font-size: 11px;
+}
+
+/* テンプレートボタン */
 .templateBtn {
   background: #f0f3ff;
   border: 1px solid #c7d2fe;
   border-radius: 5px;
-  padding: 4px 10px;
+  padding: 3px 10px;
   font-size: 11px;
   font-weight: 600;
   color: #4f6ef7;
@@ -192,5 +119,41 @@
   font-family: inherit;
   flex-shrink: 0;
   align-self: flex-start;
+  margin-top: 1px;
+  transition: background 0.12s;
 }
 .templateBtn:hover { background: #e0e7ff; }
+
+/* ─── テンプレートなしのフォールバック ─── */
+.plainTaskList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.plainTaskItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.empty {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* ─── 本社確認 ─── */
+.escalateSection {
+  background: #fdf2f8;
+  border-color: #fbcfe8;
+}
+
+.escalateText {
+  font-size: 12px;
+  color: #831843;
+  line-height: 1.6;
+}

@@ -27,10 +27,10 @@ export const SELLER_STAGE_TEMPLATES = {
   s1: [
     { id: 'st-s1-1', name: '業務依頼書', category: '受付', description: '売却依頼の基本情報を記録するシート', note: '売主の動機・希望条件・希望引渡日を記入', actionLabel: '作成する' },
     { id: 'st-s1-2', name: '担当者アサイン票', category: '受付', description: '担当者・サブ担当者の割当を記録', note: '', actionLabel: '作成する' },
-    { id: 'st-s1-3', name: '初回面談チェックリスト', category: '受付', description: '初回面談時に確認すべき項目の一覧', note: '売主情報・物件概要・売却理由・希望条件を確認', actionLabel: '開く' },
+    { id: 'st-s1-3', name: '初回面談チェックリスト', category: '受付', description: '初回面談時に確認すべき項目の一覧', note: '売主情報・物件概要・売却理由・希望条件を確認', actionLabel: 'サンプルを開く' },
   ],
   s2: [
-    { id: 'st-s2-1', name: '物件情報収集チェックリスト', category: '情報収集', description: '取得すべき公的書類・資料の確認リスト', note: '登記・公図・地積測量図・建物図面・固定資産税通知書など', actionLabel: '開く' },
+    { id: 'st-s2-1', name: '物件情報収集チェックリスト', category: '情報収集', description: '取得すべき公的書類・資料の確認リスト', note: '登記・公図・地積測量図・建物図面・固定資産税通知書など', actionLabel: 'サンプルを開く' },
     { id: 'st-s2-2', name: '登記情報取得依頼書', category: '情報収集', description: '法務局への登記事項証明書交付申請書', note: '土地・建物それぞれ取得が必要', actionLabel: '作成する' },
     { id: 'st-s2-3', name: '管理組合問い合わせシート（区分用）', category: '情報収集', description: '管理費・修繕積立金・滞納状況等の確認', note: '管理規約・総会議事録・長期修繕計画も合わせて取得', actionLabel: '作成する' },
     { id: 'st-s2-4', name: '固定資産評価額確認書', category: '情報収集', description: '市区町村への評価証明申請書', note: '法人売主の場合は代表者が申請者となることに注意', actionLabel: '作成する' },
@@ -39,8 +39,8 @@ export const SELLER_STAGE_TEMPLATES = {
     { id: 'st-s3-1', name: '現地調査報告書', category: '物件調査', description: '現地確認時の写真・メモ・状態記録シート', note: '雨漏り・シミ・亀裂・設備状態を記録。写真は必ず添付', actionLabel: '作成する' },
     { id: 'st-s3-2', name: '用途地域・法令制限調査表', category: '物件調査', description: '都市計画・建築制限・道路条件の調査記録', note: '用途地域/容積率/建ぺい率/防火規制/日影規制/高度地区/地区計画を確認', actionLabel: '作成する' },
     { id: 'st-s3-3', name: '行政調査依頼書（役所調査）', category: '物件調査', description: '市区町村窓口への法令制限確認依頼書', note: '開発許可・農転・土地区画整理・再開発区域の有無を確認', actionLabel: '作成する' },
-    { id: 'st-s3-4', name: 'ハザードマップ確認シート', category: '物件調査', description: '洪水・土砂・高潮・津波リスクの確認記録', note: '国土交通省ハザードマップポータルで確認。重説記載が義務付けられた2020年法改正に対応', actionLabel: '開く' },
-    { id: 'st-s3-5', name: '境界確認・越境チェックシート', category: '物件調査', description: '隣地境界・越境物の有無を確認するシート', note: '境界標の有無、越境する工作物（ブロック・樹木等）を記録', actionLabel: '開く' },
+    { id: 'st-s3-4', name: 'ハザードマップ確認シート', category: '物件調査', description: '洪水・土砂・高潮・津波リスクの確認記録', note: '国土交通省ハザードマップポータルで確認。重説記載が義務付けられた2020年法改正に対応', actionLabel: 'サンプルを開く' },
+    { id: 'st-s3-5', name: '境界確認・越境チェックシート', category: '物件調査', description: '隣地境界・越境物の有無を確認するシート', note: '境界標の有無、越境する工作物（ブロック・樹木等）を記録', actionLabel: 'サンプルを開く' },
     { id: 'st-s3-6', name: 'インスペクション手配依頼書', category: '物件調査', description: '既存住宅状況調査（インスペクション）の依頼書', note: '2018年宅建業法改正により媒介契約時のインスペクション説明が義務付け', actionLabel: '作成する' },
   ],
   s4: [
@@ -53,8 +53,8 @@ export const SELLER_STAGE_TEMPLATES = {
     { id: 'st-s5-1', name: '媒介契約書（専任媒介）', category: '媒介契約', description: '専任媒介契約の標準書式', note: '有効期間3ヶ月以内。レインズ登録義務7日以内。2週間1回以上の業務報告義務', actionLabel: '作成する' },
     { id: 'st-s5-2', name: '媒介契約書（専属専任媒介）', category: '媒介契約', description: '専属専任媒介契約の標準書式（国土交通省標準書式）', note: '有効期間3ヶ月以内。レインズ登録義務5日以内。1週間1回以上の業務報告義務。自己発見取引不可', actionLabel: '作成する' },
     { id: 'st-s5-3', name: '媒介契約書（一般媒介）', category: '媒介契約', description: '一般媒介契約の標準書式', note: '他社への同時依頼可。レインズ登録義務なし（明示型は登録推奨）', actionLabel: '作成する' },
-    { id: 'st-s5-4', name: '本人確認書類確認票', category: '媒介契約', description: '本人確認書類（運転免許証・マイナンバーカード等）の確認記録', note: '犯収法に基づく取引時確認。法人の場合は登記簿謄本＋代表者確認が必要', actionLabel: '開く' },
-    { id: 'st-s5-5', name: '反社会的勢力確認シート', category: '媒介契約', description: '反社チェックの実施・確認記録', note: '契約前に必ず実施。DB照合・ネット検索・ヒアリングを組み合わせる', actionLabel: '開く' },
+    { id: 'st-s5-4', name: '本人確認書類確認票', category: '媒介契約', description: '本人確認書類（運転免許証・マイナンバーカード等）の確認記録', note: '犯収法に基づく取引時確認。法人の場合は登記簿謄本＋代表者確認が必要', actionLabel: 'サンプルを開く' },
+    { id: 'st-s5-5', name: '反社会的勢力確認シート', category: '媒介契約', description: '反社チェックの実施・確認記録', note: '契約前に必ず実施。DB照合・ネット検索・ヒアリングを組み合わせる', actionLabel: 'サンプルを開く' },
     { id: 'st-s5-6', name: '個人情報取扱同意書', category: '媒介契約', description: '個人情報保護法に基づく同意書', note: '媒介契約締結と同時に取得すること', actionLabel: '作成する' },
   ],
   s6: [
@@ -69,8 +69,8 @@ export const SELLER_STAGE_TEMPLATES = {
     { id: 'st-s7-3', name: '複数申込比較検討表', category: '申込', description: '複数の購入申込を比較するための一覧表', note: '価格・ローン条件・引渡し日・買主属性を比較して売主に提示する', actionLabel: '作成する' },
   ],
   s8: [
-    { id: 'st-s8-1', name: '重要事項説明書（売主側チェックリスト）', category: '重説準備', description: '物件種別・取引内容に応じた重説作成チェックリスト', note: '宅建士が記名押印必須。電子交付は相手方の承諾が必要（2022年改正）', actionLabel: '開く' },
-    { id: 'st-s8-2', name: '法令制限確認一覧表', category: '重説準備', description: '都市計画・建築法規・個別法の確認項目一覧', note: '農地法・森林法・河川法・土地区画整理法・盛土規制法（2022年）等の適用確認が必要', actionLabel: '開く' },
+    { id: 'st-s8-1', name: '重要事項説明書（売主側チェックリスト）', category: '重説準備', description: '物件種別・取引内容に応じた重説作成チェックリスト', note: '宅建士が記名押印必須。電子交付は相手方の承諾が必要（2022年改正）', actionLabel: 'サンプルを開く' },
+    { id: 'st-s8-2', name: '法令制限確認一覧表', category: '重説準備', description: '都市計画・建築法規・個別法の確認項目一覧', note: '農地法・森林法・河川法・土地区画整理法・盛土規制法（2022年）等の適用確認が必要', actionLabel: 'サンプルを開く' },
     { id: 'st-s8-3', name: '石綿使用調査報告書（アスベスト）', category: '重説準備', description: '石綿使用の有無に関する調査記録', note: '1981年6月以前の建物は使用可能性があるため調査推奨。重説への記載義務あり', actionLabel: '作成する' },
     { id: 'st-s8-4', name: '耐震診断・耐震改修状況確認書', category: '重説準備', description: '耐震診断の実施・改修状況の確認記録', note: '1981年5月以前（旧耐震）の建物は耐震診断の有無を重説に記載', actionLabel: '作成する' },
     { id: 'st-s8-5', name: 'ハザードマップ説明用シート', category: '重説準備', description: '洪水・土砂・高潮リスクを説明するための資料', note: '国土交通省ハザードマップポータルの該当箇所を印刷して添付', actionLabel: '作成する' },
@@ -84,7 +84,7 @@ export const SELLER_STAGE_TEMPLATES = {
   ],
   s10: [
     { id: 'st-s10-1', name: '残代金精算書', category: '決済準備', description: '残代金・固定資産税等精算額・諸費用の計算書', note: '固定資産税の日割り計算は1月1日起算が原則（4月1日起算の慣行もあり）', actionLabel: '作成する' },
-    { id: 'st-s10-2', name: '決済前チェックリスト', category: '決済準備', description: '決済前に確認すべき書類・手続きの総合チェックリスト', note: '抵当権抹消・司法書士確認・書類一式の準備完了を確認すること', actionLabel: '開く' },
+    { id: 'st-s10-2', name: '決済前チェックリスト', category: '決済準備', description: '決済前に確認すべき書類・手続きの総合チェックリスト', note: '抵当権抹消・司法書士確認・書類一式の準備完了を確認すること', actionLabel: 'サンプルを開く' },
     { id: 'st-s10-3', name: '抵当権抹消手続き依頼書', category: '決済準備', description: '金融機関への抵当権抹消書類交付依頼書', note: '金融機関によって手続き期間が異なるため早めに動くこと（通常2〜4週間）', actionLabel: '作成する' },
     { id: 'st-s10-4', name: '司法書士委任状', category: '決済準備', description: '所有権移転登記等を委任する委任状', note: '売主・買主双方の委任状が必要。実印＋印鑑証明書を合わせて準備', actionLabel: '作成する' },
     { id: 'st-s10-5', name: '持参書類案内（売主向け）', category: '決済準備', description: '決済当日に売主が持参すべき書類のご案内', note: '登記済権利証/登記識別情報・実印・印鑑証明書・固定資産税通知書等', actionLabel: '作成する' },
@@ -96,10 +96,25 @@ export const SELLER_STAGE_TEMPLATES = {
     { id: 'st-s11-4', name: '引渡し完了確認書', category: '決済', description: '引渡しが完了したことを双方が確認した記録', note: '引渡し日時・物件の状態・残置物の有無を確認して署名', actionLabel: '作成する' },
   ],
   s12: [
-    { id: 'st-s12-1', name: '案件クローズ書類チェックリスト', category: '決済後', description: '決済後に回収・提出すべき書類の総合チェックリスト', note: '全書類の回収完了後にチェック。未提出書類がないか最終確認', actionLabel: '開く' },
+    { id: 'st-s12-1', name: '案件クローズ書類チェックリスト', category: '決済後', description: '決済後に回収・提出すべき書類の総合チェックリスト', note: '全書類の回収完了後にチェック。未提出書類がないか最終確認', actionLabel: 'サンプルを開く' },
     { id: 'st-s12-2', name: '報酬請求書（仲介手数料）', category: '決済後', description: '売主への仲介手数料請求書', note: '仲介手数料の上限は売買価格×3%+6万円（税抜）。決済完了後に発行', actionLabel: '作成する' },
     { id: 'st-s12-3', name: '社内報告書（案件完了）', category: '決済後', description: '案件完了時の社内向け報告フォーム', note: '成約価格・手数料額・案件の経緯・特記事項を記載', actionLabel: '作成する' },
     { id: 'st-s12-4', name: '仲介手数料領収書', category: '決済後', description: '仲介手数料の受領を証明する領収書', note: '入金確認後に発行。収入印紙の要否を確認（5万円以上は必要）', actionLabel: '作成する' },
+  ],
+
+  // ─── 条件追加工程テンプレート（売主側） ───
+  'sx-mortgage': [
+    { id: 'ext-sxmtg-1', name: '残債残高証明書（金融機関発行）', category: '抵当権', note: '金融機関によって発行まで1〜2週間かかる。売買契約前に早めに依頼すること', actionLabel: '依頼する' },
+    { id: 'ext-sxmtg-2', name: '抵当権者への売却意向連絡書', category: '抵当権', note: '同時抹消か事前完済かの方針を金融機関と合意する。残債が売価を上回る場合は任意売却の可能性あり', actionLabel: '作成する' },
+    { id: 'ext-sxmtg-3', name: '任意売却同意書（必要な場合）', category: '抵当権', note: '売却代金が残債を下回る場合のみ必要。金融機関の稟議が通るまで1〜2ヶ月かかることがある', actionLabel: '収集する' },
+    { id: 'ext-sxmtg-4', name: '抵当権抹消スケジュール確認書', category: '抵当権', note: '決済日から逆算して金融機関への依頼タイミングを決める。通常は決済日に残債返済と抵当権抹消を同時処理', actionLabel: '確認する' },
+  ],
+  'sx-ownerchange': [
+    { id: 'ext-sxoc-1', name: '賃貸借契約書（全室分）', category: 'オーナーチェンジ', note: '定期/普通借家の別、賃料、契約期間、特約事項を確認。定期借家は満了時の更新拒否が可能', actionLabel: '収集する' },
+    { id: 'ext-sxoc-2', name: '入居者名簿・入居状況一覧', category: 'オーナーチェンジ', note: '空室・満室・賃料滞納の有無を記録。買主の収益試算に使用する重要書類', actionLabel: '作成する' },
+    { id: 'ext-sxoc-3', name: '敷金・礼金一覧表', category: 'オーナーチェンジ', note: '敷金は売主から買主へ引き継ぐ（民法605条の2）。精算書に正確に記載すること', actionLabel: '作成する' },
+    { id: 'ext-sxoc-4', name: '管理会社への売却・変更連絡書', category: 'オーナーチェンジ', note: 'オーナーチェンジ後の管理委託継続可否を確認。新オーナーへの引継ぎ手続きを事前に調整', actionLabel: '確認する' },
+    { id: 'ext-sxoc-5', name: '賃借人への通知文書（決済後・所有権移転後）', category: 'オーナーチェンジ', note: '賃借人への通知は所有権移転後に新オーナーが行う。エージェントは文書作成をサポートする形で支援', actionLabel: '作成する' },
   ],
 };
 
@@ -108,7 +123,7 @@ export const SELLER_STAGE_TEMPLATES = {
 // ─────────────────────────────────────────────
 export const BUYER_STAGE_TEMPLATES = {
   b1: [
-    { id: 'bt-b1-1', name: '顧客ヒアリングシート', category: 'ヒアリング', description: '購入希望条件（エリア・広さ・予算・用途・希望時期）を整理するシート', note: '居住用か投資用かで確認事項が異なる。ライフステージ・家族構成も把握', actionLabel: '開く' },
+    { id: 'bt-b1-1', name: '顧客ヒアリングシート', category: 'ヒアリング', description: '購入希望条件（エリア・広さ・予算・用途・希望時期）を整理するシート', note: '居住用か投資用かで確認事項が異なる。ライフステージ・家族構成も把握', actionLabel: 'サンプルを開く' },
     { id: 'bt-b1-2', name: '購入希望条件確認書', category: 'ヒアリング', description: '優先条件・妥協可能条件を整理した確認書', note: '「絶対条件」と「できれば条件」を分けて整理すること', actionLabel: '作成する' },
     { id: 'bt-b1-3', name: '顧客情報登録シート', category: 'ヒアリング', description: '顧客基本情報・連絡先・担当者情報の登録フォーム', note: '個人情報取扱同意書と合わせて取得すること', actionLabel: '作成する' },
   ],
@@ -116,32 +131,32 @@ export const BUYER_STAGE_TEMPLATES = {
     { id: 'bt-b2-1', name: '資金計画書', category: '資金計画', description: '自己資金・ローン希望額・諸費用を整理した資金計画書', note: '諸費用は物件価格の5〜8%（新築は3〜5%）。資金計画書に含めて説明すること', actionLabel: '作成する' },
     { id: 'bt-b2-2', name: '住宅ローンシミュレーション表', category: '資金計画', description: '借入額・金利・返済期間別の月次返済額試算表', note: '変動金利/固定金利の違いと金利上昇リスクも説明すること', actionLabel: '作成する' },
     { id: 'bt-b2-3', name: '返済比率確認シート', category: '資金計画', description: '年収に対する年間返済負担率の計算シート', note: '一般的に年収の30〜35%以内が目安。金融機関ごとに基準が異なる', actionLabel: '作成する' },
-    { id: 'bt-b2-4', name: '住宅ローン控除・補助金案内', category: '資金計画', description: '住宅ローン控除・すまい給付金・各種補助金の案内', note: '2024年以降の住宅ローン控除改正内容を確認すること', actionLabel: '開く' },
+    { id: 'bt-b2-4', name: '住宅ローン控除・補助金案内', category: '資金計画', description: '住宅ローン控除・すまい給付金・各種補助金の案内', note: '2024年以降の住宅ローン控除改正内容を確認すること', actionLabel: 'サンプルを開く' },
   ],
   b3: [
     { id: 'bt-b3-1', name: '物件紹介リスト', category: '物件紹介', description: '条件に合う物件を一覧化した提案リスト', note: '価格・広さ・築年・駅距離・管理費等を統一フォーマットで比較', actionLabel: '作成する' },
     { id: 'bt-b3-2', name: '物件比較検討表', category: '物件紹介', description: '複数物件のメリット・デメリットを比較する表', note: '顧客の優先条件に照らして◎○△×で評価すると分かりやすい', actionLabel: '作成する' },
   ],
   b4: [
-    { id: 'bt-b4-1', name: '内見記録シート', category: '内見', description: '内見時の確認事項・顧客コメントを記録するシート', note: '設備・日当たり・騒音・臭い・収納量・隣地状況を記録すること', actionLabel: '開く' },
-    { id: 'bt-b4-2', name: '物件確認チェックリスト（中古住宅）', category: '内見', description: '既存住宅内見時に確認すべき状態チェックリスト', note: '雨漏り・シミ・傾き・床鳴り・水回りの状態・窓サッシの建付けを確認', actionLabel: '開く' },
+    { id: 'bt-b4-1', name: '内見記録シート', category: '内見', description: '内見時の確認事項・顧客コメントを記録するシート', note: '設備・日当たり・騒音・臭い・収納量・隣地状況を記録すること', actionLabel: 'サンプルを開く' },
+    { id: 'bt-b4-2', name: '物件確認チェックリスト（中古住宅）', category: '内見', description: '既存住宅内見時に確認すべき状態チェックリスト', note: '雨漏り・シミ・傾き・床鳴り・水回りの状態・窓サッシの建付けを確認', actionLabel: 'サンプルを開く' },
     { id: 'bt-b4-3', name: '内見同意書', category: '内見', description: '内見時の諸条件・注意事項の確認書', note: '写真撮影の可否・複数回内見の取り決めを明確に', actionLabel: '作成する' },
   ],
   b5: [
     { id: 'bt-b5-1', name: '住宅ローン事前審査申込書', category: '事前審査', description: '金融機関への事前審査申込書（銀行記載形式）', note: '複数行に申し込む場合は記録が残ることを顧客に説明すること', actionLabel: '作成する' },
-    { id: 'bt-b5-2', name: '事前審査必要書類チェックリスト', category: '事前審査', description: '本人確認書類・収入証明書類等の収集チェックリスト', note: '源泉徴収票・確定申告書・健康保険証・運転免許証等を確認', actionLabel: '開く' },
+    { id: 'bt-b5-2', name: '事前審査必要書類チェックリスト', category: '事前審査', description: '本人確認書類・収入証明書類等の収集チェックリスト', note: '源泉徴収票・確定申告書・健康保険証・運転免許証等を確認', actionLabel: 'サンプルを開く' },
     { id: 'bt-b5-3', name: '金融機関比較表', category: '事前審査', description: '複数金融機関の金利・審査条件を比較する表', note: '都銀・地銀・信金・フラット35の特徴と金利を比較して提案', actionLabel: '作成する' },
   ],
   b6: [
     { id: 'bt-b6-1', name: '購入申込書（買主用）', category: '購入申込', description: '購入希望価格・条件・引渡し希望日を記載した申込書', note: '希望価格・引渡し条件・ローン特約の要否・手付金額を明記', actionLabel: '作成する' },
-    { id: 'bt-b6-2', name: '本人確認書類確認票', category: '購入申込', description: '犯収法に基づく取引時確認記録', note: '法人の場合は登記簿謄本＋代表者確認書類が必要', actionLabel: '開く' },
-    { id: 'bt-b6-3', name: '反社会的勢力確認シート', category: '購入申込', description: '反社チェック実施記録', note: '申込前に必ず実施すること', actionLabel: '開く' },
+    { id: 'bt-b6-2', name: '本人確認書類確認票', category: '購入申込', description: '犯収法に基づく取引時確認記録', note: '法人の場合は登記簿謄本＋代表者確認書類が必要', actionLabel: 'サンプルを開く' },
+    { id: 'bt-b6-3', name: '反社会的勢力確認シート', category: '購入申込', description: '反社チェック実施記録', note: '申込前に必ず実施すること', actionLabel: 'サンプルを開く' },
   ],
   b7: [
     { id: 'bt-b7-1', name: '条件交渉記録シート', category: '条件交渉', description: '価格・引渡し日・ローン特約等の交渉経緯記録', note: '口頭での合意は文書化すること。担当者のメモも証跡として保管', actionLabel: '作成する' },
   ],
   b8: [
-    { id: 'bt-b8-1', name: '重要事項説明書（買主用チェックリスト）', category: '重説確認', description: '買主側の視点で重説内容を確認するためのチェックリスト', note: 'ハザードマップ・法令制限・管理費滞納・石綿・耐震診断の確認を忘れずに', actionLabel: '開く' },
+    { id: 'bt-b8-1', name: '重要事項説明書（買主用チェックリスト）', category: '重説確認', description: '買主側の視点で重説内容を確認するためのチェックリスト', note: 'ハザードマップ・法令制限・管理費滞納・石綿・耐震診断の確認を忘れずに', actionLabel: 'サンプルを開く' },
     { id: 'bt-b8-2', name: '重要事項確認メモ（顧客向け）', category: '重説確認', description: '重要事項説明の主要ポイントを顧客向けにわかりやすくまとめた資料', note: '法律用語を平易な言葉で補足説明する際に活用', actionLabel: '作成する' },
   ],
   b9: [
@@ -150,15 +165,15 @@ export const BUYER_STAGE_TEMPLATES = {
     { id: 'bt-b9-3', name: '融資利用特約確認書（買主向け）', category: '売買契約', description: 'ローン特約の条件・期限の確認書', note: '事前審査通過後の転職・新規借入がローン特約解除できない可能性を説明', actionLabel: '作成する' },
   ],
   b10: [
-    { id: 'bt-b10-1', name: '住宅ローン本審査書類チェックリスト', category: '本審査', description: '本審査に必要な書類の収集チェックリスト', note: '売買契約書・重要事項説明書・建物の登記事項証明書等が追加で必要', actionLabel: '開く' },
+    { id: 'bt-b10-1', name: '住宅ローン本審査書類チェックリスト', category: '本審査', description: '本審査に必要な書類の収集チェックリスト', note: '売買契約書・重要事項説明書・建物の登記事項証明書等が追加で必要', actionLabel: 'サンプルを開く' },
     { id: 'bt-b10-2', name: '物件関係書類一覧（融資用）', category: '本審査', description: '金融機関に提出する物件関連書類の一覧', note: '建物の評価証明・登記簿謄本・マンションの場合は管理規約等', actionLabel: '作成する' },
   ],
   b11: [
-    { id: 'bt-b11-1', name: '金消契約チェックリスト', category: '金消契約', description: '金消契約に持参すべき書類・確認事項のチェックリスト', note: '実印・印鑑証明書・通帳・収入印紙（住宅ローン用）を準備', actionLabel: '開く' },
+    { id: 'bt-b11-1', name: '金消契約チェックリスト', category: '金消契約', description: '金消契約に持参すべき書類・確認事項のチェックリスト', note: '実印・印鑑証明書・通帳・収入印紙（住宅ローン用）を準備', actionLabel: 'サンプルを開く' },
     { id: 'bt-b11-2', name: '持参書類案内（金消契約）', category: '金消契約', description: '金消契約当日の持参書類案内（顧客向け）', note: '金消契約は決済の1〜2週間前に実施。実印忘れがトラブルの原因になりやすい', actionLabel: '作成する' },
   ],
   b12: [
-    { id: 'bt-b12-1', name: '決済前チェックリスト（買主向け）', category: '決済準備', description: '買主として決済前に準備・確認すべき事項の一覧', note: '残代金振込・諸費用振込・持参書類の準備を事前に確認すること', actionLabel: '開く' },
+    { id: 'bt-b12-1', name: '決済前チェックリスト（買主向け）', category: '決済準備', description: '買主として決済前に準備・確認すべき事項の一覧', note: '残代金振込・諸費用振込・持参書類の準備を事前に確認すること', actionLabel: 'サンプルを開く' },
     { id: 'bt-b12-2', name: '持参書類案内（決済当日）', category: '決済準備', description: '決済当日に持参すべき書類の案内書', note: '実印・印鑑証明書・残代金振込先メモ・本人確認書類等', actionLabel: '作成する' },
     { id: 'bt-b12-3', name: '残代金・諸費用精算書', category: '決済準備', description: '残代金・固定資産税精算・仲介手数料等の費用一覧', note: '当日振込の金額を事前に確定させ、顧客に余裕を持って案内すること', actionLabel: '作成する' },
   ],
@@ -171,6 +186,14 @@ export const BUYER_STAGE_TEMPLATES = {
     { id: 'bt-b14-1', name: '登記完了証確認シート', category: '入居後', description: '登記完了証の受取・内容確認記録', note: '登記完了は申請から通常1〜2週間後。完了証の受取を確認すること', actionLabel: '作成する' },
     { id: 'bt-b14-2', name: '仲介手数料領収書（買主用）', category: '入居後', description: '買主への仲介手数料領収書', note: '仲介手数料の上限は売買価格×3%+6万円（税抜）', actionLabel: '作成する' },
     { id: 'bt-b14-3', name: 'アフターフォロー案内', category: '入居後', description: '入居後の手続き・確定申告（住宅ローン控除）の案内', note: '取得翌年の確定申告で住宅ローン控除の適用申請が必要（初年度）', actionLabel: '作成する' },
+  ],
+
+  // ─── 条件追加工程テンプレート（買主側） ───
+  'bx-renovation': [
+    { id: 'ext-bxreno-1', name: 'リノベーション業者への相見積依頼書', category: 'リノベーション', note: '3社以上に見積り依頼を推奨。内見時に業者同行できると費用精度が上がる', actionLabel: '作成する' },
+    { id: 'ext-bxreno-2', name: '管理規約リノベ可否確認書', category: 'リノベーション', note: '区分マンションは管理規約でリノベ可能範囲が制限される（専有部のみ改修可が多い）。着工前に管理組合の承認が必要なケースあり', actionLabel: '確認する' },
+    { id: 'ext-bxreno-3', name: 'リノベ工事費概算見積書', category: 'リノベーション', note: '事前審査・本審査の前に概算が必要。ローンに含める場合は確定見積を本審査前に用意すること', actionLabel: '収集する' },
+    { id: 'ext-bxreno-4', name: 'リノベ一体型ローン金融機関選定表', category: 'リノベーション', note: 'フラット35リノベ・銀行のリフォーム一体型ローンを比較。費用をローンに含めない場合は不要', actionLabel: '作成する' },
   ],
 };
 
@@ -1082,3 +1105,252 @@ export const ESCALATION_TRIGGERS = [
   'インスペクション', '瑕疵', '契約不適合', '詐欺', '相続', '成年後見',
   '共有持分', '境界紛争', '越境', '借地権', '地上権',
 ];
+
+// ─────────────────────────────────────────────
+// アセット別・条件別 追加テンプレート
+// ─────────────────────────────────────────────
+
+// 売主側: 抵当権あり → s2(情報収集)に残債確認書
+const SELLER_MORTGAGE_S2 = [
+  { id: 'ex-s2-mtg-1', name: '残債残高証明書（金融機関発行）', category: '情報収集', description: '住宅ローン等の残債を証明する書類。決済時に必要', note: '金融機関によって発行まで1〜2週間かかる。早めに依頼すること', actionLabel: '依頼する' },
+  { id: 'ex-s2-mtg-2', name: '抵当権者への事前連絡シート', category: '情報収集', description: '売却の意向を金融機関に事前連絡するための確認シート', note: '繰上返済・抵当権抹消の手続き期間を確認する', actionLabel: '作成する' },
+];
+
+// 売主側: オーナーチェンジ → s2(情報収集)に賃貸関連書類
+const SELLER_OWNER_CHANGE_S2 = [
+  { id: 'ex-s2-oc-1', name: '賃貸借契約書（全室分）', category: '情報収集', description: '現在の入居者との賃貸借契約書一式', note: '契約期間・賃料・敷金・特約事項を確認。定期建物賃貸借か否かも確認', actionLabel: '収集する' },
+  { id: 'ex-s2-oc-2', name: '入居者名簿・入居状況一覧', category: '情報収集', description: '全室の入居者情報・空室状況・賃料収入の一覧表', note: '賃料未払い・滞納の有無を確認すること', actionLabel: '作成する' },
+  { id: 'ex-s2-oc-3', name: '敷金・礼金一覧表', category: '情報収集', description: '各入居者から受領している敷金・礼金の一覧', note: '敷金は買主に引き継がれるため正確に記録すること', actionLabel: '作成する' },
+  { id: 'ex-s2-oc-4', name: '管理会社情報シート', category: '情報収集', description: '賃貸管理会社の連絡先・管理委託契約書', note: 'オーナーチェンジ後の管理委託継続可否を確認すること', actionLabel: '確認する' },
+];
+
+// 売主側: 区分マンション → s2に管理組合詳細
+const SELLER_CONDO_S2 = [
+  { id: 'ex-s2-condo-1', name: '管理組合総会議事録（直近3期分）', category: '情報収集', description: '修繕・規約変更・問題事項が記録された議事録', note: '大規模修繕の計画・実施状況、管理費滞納問題がないか確認', actionLabel: '収集する' },
+  { id: 'ex-s2-condo-2', name: '長期修繕計画書', category: '情報収集', description: '修繕積立金の計画・残高状況', note: '修繕積立金が不足していると将来の一時金徴収リスクがある', actionLabel: '収集する' },
+  { id: 'ex-s2-condo-3', name: '修繕積立金残高証明書', category: '情報収集', description: '積立金の現在残高を示す書類', note: '管理組合または管理会社に請求。重説への記載が必要', actionLabel: '依頼する' },
+];
+
+// 売主側: 戸建 → s2に建築確認関連
+const SELLER_HOUSE_S2 = [
+  { id: 'ex-s2-house-1', name: '建物確認申請書・検査済証', category: '情報収集', description: '建築時の確認申請書と完了検査済証', note: '検査済証がない場合は「未取得」と明記。再建築時の問題になりうる', actionLabel: '確認する' },
+  { id: 'ex-s2-house-2', name: '設計図書（建築図面）', category: '情報収集', description: '建物の設計図面一式（平面図・立面図等）', note: '増改築がある場合はその図面も必要。現況と図面の相違がないか確認', actionLabel: '収集する' },
+  { id: 'ex-s2-house-3', name: '建物建設時の工事請負契約書', category: '情報収集', description: '建設時の施工会社との契約書', note: '瑕疵保険の有無・保証内容確認に必要なケースあり', actionLabel: '確認する' },
+];
+
+// 売主側: 土地 → s2に測量・境界関連
+const SELLER_LAND_S2 = [
+  { id: 'ex-s2-land-1', name: '地積測量図（確定測量済み）', category: '情報収集', description: '境界確定後の正式な測量図', note: '未確定の場合は確定測量の実施を検討すること（費用・期間に注意）', actionLabel: '確認する' },
+  { id: 'ex-s2-land-2', name: '境界確認書（隣地同意済み）', category: '情報収集', description: '隣地所有者との境界合意書面', note: '境界未確定は価格交渉・契約トラブルの原因。早期確認が重要', actionLabel: '収集する' },
+  { id: 'ex-s2-land-3', name: '実測図', category: '情報収集', description: '現況の実測面積を記載した図面', note: '公簿面積と実測面積の差異を確認し、売買面積の取決めを明確に', actionLabel: '確認する' },
+];
+
+// 売主側: 一棟マンション/アパート → s2に収益情報
+const SELLER_INCOME_S2 = [
+  { id: 'ex-s2-income-1', name: '賃料収支明細書（直近2年分）', category: '情報収集', description: '各室の賃料・空室率・管理費等の収支実績', note: 'NOI（純営業収益）計算のベースとなる重要書類', actionLabel: '作成する' },
+  { id: 'ex-s2-income-2', name: '建物管理委託契約書', category: '情報収集', description: '賃貸管理会社との管理委託契約書', note: '管理委託費率・契約期間・引継ぎ条件を確認', actionLabel: '収集する' },
+  { id: 'ex-s2-income-3', name: 'レントロール（賃料一覧表）', category: '情報収集', description: '全室の現行賃料・入居状況・契約満了日一覧', note: '買主の収益試算に必要な最重要書類。正確な情報を記載すること', actionLabel: '作成する' },
+];
+
+// 買主側: 購入後リノベ計画あり → b2(資金計画)に費用込み計画書
+const BUYER_PLAN_RENO_B2 = [
+  { id: 'ex-b2-reno-1', name: 'リノベーション費用込み資金計画書', category: '資金計画', description: '物件購入費＋リノベ工事費を合算した総資金計画書', note: '工事費の概算は業者に早めに依頼すること。ローンに含める場合は融資上限も確認', actionLabel: '作成する' },
+  { id: 'ex-b2-reno-2', name: 'リノベ費用概算見積依頼書', category: '資金計画', description: 'リノベーション工事の概算費用を業者に依頼するための書類', note: '内見前に依頼しておくと資金計画がスムーズ。複数社に見積りを取ることを推奨', actionLabel: '作成する' },
+];
+
+// 買主側: 購入後リノベ計画あり → b4(内見)に可否確認
+const BUYER_PLAN_RENO_B4 = [
+  { id: 'ex-b4-reno-1', name: 'リノベーション可否確認チェックリスト', category: '内見', description: '管理規約・構造制限・行政許可等のリノベ可否を確認するシート', note: '区分マンションは管理規約でリフォーム制限がある場合が多い。事前確認が必須', actionLabel: 'サンプルを開く' },
+  { id: 'ex-b4-reno-2', name: 'リノベーション業者同行依頼書', category: '内見', description: '内見時にリノベ業者を同行させるための依頼書', note: '業者同行内見により工事費の精度が上がる。売主側の了解を事前に取ること', actionLabel: '作成する' },
+];
+
+// 買主側: リノベ費用をローンに含める → b5(事前審査)にローン比較
+const BUYER_RENO_LOAN_B5 = [
+  { id: 'ex-b5-reno-1', name: 'リノベ一体型ローン（リフォームローン）比較表', category: '事前審査', description: '住宅ローン＋リノベ費用を一体で借入できる商品の比較表', note: 'フラット35リノベ・銀行のリフォーム一体型ローンを比較。金利・融資上限・審査条件に注意', actionLabel: '作成する' },
+  { id: 'ex-b5-reno-2', name: 'リノベ費用概算見積書（審査提出用）', category: '事前審査', description: '事前審査に必要なリノベ工事費の概算見積書', note: '審査時点で確定見積でなくても概算可。ただし後で大幅増額しないよう注意', actionLabel: '収集する' },
+];
+
+// 買主側: リノベ費用をローンに含める → b10(本審査)に工事書類
+const BUYER_RENO_LOAN_B10 = [
+  { id: 'ex-b10-reno-1', name: 'リノベ工事請負契約書または確定見積書（融資用）', category: '本審査', description: '本審査に必要なリノベ工事の契約書または確定見積書', note: '本審査では確定見積書が必要なことが多い。概算から変更がある場合は早めに差替えること', actionLabel: '収集する' },
+  { id: 'ex-b10-reno-2', name: 'リノベーション費用明細書（融資用）', category: '本審査', description: '工事内容・金額の内訳を記載した明細書（金融機関提出用）', note: '融資金額に含める工事費の内訳を明確にすること。外構・家具は融資対象外の場合あり', actionLabel: '作成する' },
+];
+
+// 買主側: オーナーチェンジ → b4/b8に賃借関連
+const BUYER_OWNER_CHANGE_B4 = [
+  { id: 'ex-b4-oc-1', name: '入居者在室前提内見同意書', category: '内見', description: '現入居者がいる状態での内見に関する同意・配慮事項確認書', note: '内見の告知義務・時間帯・回数制限等を売主・売主側担当と確認すること', actionLabel: '作成する' },
+  { id: 'ex-b4-oc-2', name: '賃貸借契約書（現況確認用）', category: '内見', description: '現在の賃貸借契約の内容を確認するための書類', note: '賃料・契約期間・特約・定期/普通借家の別を確認。引継ぎ条件に影響する', actionLabel: '確認する' },
+];
+
+const BUYER_OWNER_CHANGE_B8 = [
+  { id: 'ex-b8-oc-1', name: '賃貸借契約内容確認シート（重説用）', category: '重説確認', description: '重要事項説明に必要な賃貸借契約の要点整理シート', note: '賃料・保証人・敷金・契約期間を重説に正確に反映すること', actionLabel: '作成する' },
+  { id: 'ex-b8-oc-2', name: '敷金引継ぎ確認書', category: '重説確認', description: '売主から買主への敷金引継ぎを確認する書類', note: '敷金は原則買主が引き継ぐ。精算書で金額を明確に', actionLabel: '作成する' },
+];
+
+// 買主側: 区分マンション → b8に管理状況確認
+const BUYER_CONDO_B8 = [
+  { id: 'ex-b8-condo-1', name: '管理費・修繕積立金残高確認書', category: '重説確認', description: '購入物件の管理費・修繕積立金の支払い状況と積立残高', note: '滞納がないか・修繕積立金が計画通りに積み立てられているかを確認', actionLabel: '確認する' },
+  { id: 'ex-b8-condo-2', name: '管理規約・使用細則（最新版）', category: '重説確認', description: 'ペット・民泊・リフォーム等の制限事項が記載された規約', note: '投資目的の場合はAirbnb等の短期賃貸禁止条項に注意', actionLabel: '収集する' },
+  { id: 'ex-b8-condo-3', name: '大規模修繕計画書（将来計画）', category: '重説確認', description: '将来の修繕予定と修繕積立金の充足度を確認する書類', note: '修繕積立金が不足していると将来の一時金徴収リスクがある', actionLabel: '確認する' },
+];
+
+/**
+ * 案件の条件に応じた工程別テンプレートを返す
+ * @param {string} stageId - 工程ID
+ * @param {string} side - '売主側' | '買主側'
+ * @param {object} conditions - { propertyType, hasMortgage, planRenovation, renovationLoan, isOwnerChange }
+ */
+export function getStageTemplates(stageId, side, conditions = {}) {
+  const { propertyType = '', hasMortgage = false, planRenovation = false, renovationLoan = false, isOwnerChange = false } = conditions;
+
+  const base = side === '買主側'
+    ? (BUYER_STAGE_TEMPLATES[stageId] || [])
+    : (SELLER_STAGE_TEMPLATES[stageId] || []);
+
+  const extra = [];
+
+  if (side === '売主側') {
+    // s2: 物件情報収集 — アセット別追加書類
+    if (stageId === 's2') {
+      if (propertyType === '区分マンション') extra.push(...SELLER_CONDO_S2);
+      if (propertyType === '戸建')           extra.push(...SELLER_HOUSE_S2);
+      if (propertyType === '土地')           extra.push(...SELLER_LAND_S2);
+      if (propertyType === '一棟マンション' || propertyType === '一棟アパート') extra.push(...SELLER_INCOME_S2);
+      if (hasMortgage)    extra.push(...SELLER_MORTGAGE_S2);
+      if (isOwnerChange)  extra.push(...SELLER_OWNER_CHANGE_S2);
+    }
+  }
+
+  if (side === '買主側') {
+    // b2: 資金計画 — リノベ計画あり
+    if (stageId === 'b2') {
+      if (planRenovation) extra.push(...BUYER_PLAN_RENO_B2);
+    }
+    // b4: 内見 — リノベ計画・オーナーチェンジ追加
+    if (stageId === 'b4') {
+      if (planRenovation) extra.push(...BUYER_PLAN_RENO_B4);
+      if (isOwnerChange)  extra.push(...BUYER_OWNER_CHANGE_B4);
+    }
+    // b5: 事前審査 — リノベローンあり
+    if (stageId === 'b5') {
+      if (renovationLoan) extra.push(...BUYER_RENO_LOAN_B5);
+    }
+    // b8: 重説確認 — アセット・条件別追加
+    if (stageId === 'b8') {
+      if (propertyType === '区分マンション') extra.push(...BUYER_CONDO_B8);
+      if (isOwnerChange)  extra.push(...BUYER_OWNER_CHANGE_B8);
+    }
+    // b10: 本審査 — リノベローンあり
+    if (stageId === 'b10') {
+      if (renovationLoan) extra.push(...BUYER_RENO_LOAN_B10);
+    }
+  }
+
+  return [...base, ...extra];
+}
+
+// ─────────────────────────────────────────────
+// 条件に応じて追加される工程定義
+// ─────────────────────────────────────────────
+
+const CONDITION_EXTRA_STAGES = {
+  seller_mortgage: {
+    id: 'sx-mortgage',
+    name: '抵当権抹消・残債調整',
+    tasks: [
+      '残債残高の最終確認（金融機関に問い合わせ）',
+      '金融機関への売却・決済日の事前連絡',
+      '同時抹消か事前完済かの方針確定',
+      '任意売却の場合：金融機関の同意書を取得',
+      '抵当権抹消書類の取得スケジュール確認',
+    ],
+    notes: '売却代金が残債を下回る場合は「任意売却」となり金融機関の同意が必須。決済日に残債返済と抵当権抹消を同時処理するケースが最も多い。金融機関の書類準備に2〜4週間かかるため早めに動くこと。',
+    escalationNeeded: false,
+    _insertAfter: 's9',
+  },
+  seller_ownerChange: {
+    id: 'sx-ownerchange',
+    name: '賃借人対応・敷金引継ぎ（オーナーチェンジ）',
+    tasks: [
+      '賃貸借契約書（全室）の内容確認',
+      '敷金・礼金の引継ぎ金額確定',
+      '管理会社への売却・オーナー変更連絡',
+      '賃借人への通知文書の準備（決済後・所有権移転後にエージェントがサポート）',
+    ],
+    notes: '賃借人は現賃貸借契約をそのまま引き継ぐ権利がある（民法605条の2）。賃借人への通知は所有権移転後に新オーナーが行うもので、エージェントは文書作成などをサポートする形で支援する。敷金は売主から買主へ引き継ぐため精算書に正確に記載すること。',
+    escalationNeeded: false,
+    _insertAfter: 's2',
+  },
+  buyer_renovation: {
+    id: 'bx-renovation',
+    name: 'リノベーション計画・業者選定',
+    tasks: [
+      'リノベーション業者への相見積（3社以上推奨）',
+      '区分マンションの場合：管理規約でのリノベ可否確認',
+      'リノベ工事範囲・費用の概算確定',
+      'リノベ費用をローンに含める場合：一体型ローンの金融機関選定',
+    ],
+    notes: '区分マンションは管理規約でリノベ可能範囲が制限されている場合が多い。内見段階から業者同行を検討すること。工事費の確定は本審査・金消契約前に必要。',
+    escalationNeeded: false,
+    _insertAfter: 'b4',
+  },
+  buyer_ownerChange: {
+    id: 'bx-ownerchange',
+    name: '賃借人対応・引継ぎ確認（オーナーチェンジ）',
+    tasks: [
+      '賃貸借契約書の内容確認（賃料・期間・特約）',
+      '敷金引継ぎ金額の確認',
+      '管理会社への新オーナー変更手続き確認',
+      '賃借人への新オーナー通知のタイミング確認',
+    ],
+    notes: '賃借人は現賃貸借契約をそのまま引き継ぐ（民法605条の2）。引継ぎを拒否することはできない。収益試算・キャップレート計算も合わせて確認すること。',
+    escalationNeeded: false,
+    _insertAfter: 'b8',
+  },
+};
+
+const CONDITION_STAGE_IDS = new Set(Object.values(CONDITION_EXTRA_STAGES).map(s => s.id));
+
+/**
+ * 条件変更時に工程リストを再同期する
+ * 条件に対応する工程を追加・削除し、既存ステータスは保持する
+ */
+export function syncConditionStages(stages, side, conditions) {
+  const { hasMortgage = false, planRenovation = false, isOwnerChange = false } = conditions;
+
+  // 既存の条件工程のステータスを保存（削除後に再追加するため）
+  const existingConditionStages = {};
+  for (const s of stages) {
+    if (CONDITION_STAGE_IDS.has(s.id)) existingConditionStages[s.id] = s;
+  }
+
+  // 条件工程を除いたベース工程
+  let result = stages.filter(s => !CONDITION_STAGE_IDS.has(s.id));
+
+  // 追加すべき条件工程を決定
+  const toAdd = [];
+  if (side === '売主側') {
+    if (hasMortgage)   toAdd.push(CONDITION_EXTRA_STAGES.seller_mortgage);
+    if (isOwnerChange) toAdd.push(CONDITION_EXTRA_STAGES.seller_ownerChange);
+  }
+  if (side === '買主側') {
+    if (planRenovation) toAdd.push(CONDITION_EXTRA_STAGES.buyer_renovation);
+  }
+
+  // 正しい位置に挿入（以前のステータスを引き継ぐ）
+  for (const { _insertAfter, ...stageDef } of toAdd) {
+    const existing = existingConditionStages[stageDef.id];
+    const stageToInsert = {
+      ...stageDef,
+      status: existing ? existing.status : STAGE_STATUS.PENDING,
+    };
+    const insertIdx = result.findIndex(s => s.id === _insertAfter);
+    if (insertIdx !== -1) {
+      result = [...result.slice(0, insertIdx + 1), stageToInsert, ...result.slice(insertIdx + 1)];
+    } else {
+      result.push(stageToInsert);
+    }
+  }
+
+  return result;
+}

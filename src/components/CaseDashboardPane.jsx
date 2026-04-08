@@ -4,6 +4,8 @@ import StageDetailInline from './StageDetailInline';
 import { PROPERTY_TYPES, BROKERAGE_TYPES, CUSTOMER_TYPES, CASE_SIDES } from '../data/dummyData';
 import styles from './CaseDashboardPane.module.css';
 
+
+
 const STATUS_COLOR = {
   '進行中': { bg: '#dbeafe', text: '#1d4ed8' },
   '要確認': { bg: '#fef3c7', text: '#b45309' },
@@ -18,7 +20,7 @@ const SIDE_COLOR = {
 const MIN_PX = 60;
 
 // ── インライン案件情報編集パネル ──
-function CaseInfoEdit({ c, onSave, onCancel }) {
+function CaseInfoEdit({ c, onSave, onCancel, onDelete }) {
   const [form, setForm] = useState({
     customerName: c.customerName || '',
     location: c.location || '',
@@ -29,6 +31,10 @@ function CaseInfoEdit({ c, onSave, onCancel }) {
     customerType: c.customerType || '個人',
     loanRequired: c.loanRequired || false,
     brokerageType: c.brokerageType || '専任媒介',
+    hasMortgage: c.hasMortgage || false,
+    planRenovation: c.planRenovation || false,
+    renovationLoan: c.renovationLoan || false,
+    isOwnerChange: c.isOwnerChange || false,
   });
 
   const set = (k, v) => setForm(prev => ({ ...prev, [k]: v }));
@@ -89,7 +95,51 @@ function CaseInfoEdit({ c, onSave, onCancel }) {
         <input className={styles.editInput} value={form.address} onChange={e => set('address', e.target.value)} placeholder="東京都渋谷区桜丘1-2-3" />
       </div>
 
+      {/* ─── 物件固有の条件 ─── */}
+      <div className={styles.editConditions}>
+        <div className={styles.editConditionsLabel}>物件固有の条件</div>
+        <div className={styles.editConditionsGrid}>
+          {form.side === '売主側' && (
+            <div className={styles.editField}>
+              <label className={styles.editLabel}>🏦 抵当権の有無</label>
+              <select className={styles.editSelect} value={form.hasMortgage ? 'あり' : 'なし'} onChange={e => set('hasMortgage', e.target.value === 'あり')}>
+                <option>なし</option>
+                <option>あり</option>
+              </select>
+            </div>
+          )}
+          {form.side === '買主側' && (
+            <div className={styles.editField}>
+              <label className={styles.editLabel}>🔨 購入後にリノベーションを行うか</label>
+              <select className={styles.editSelect} value={form.planRenovation ? 'あり' : 'なし'} onChange={e => { set('planRenovation', e.target.value === 'あり'); if (e.target.value === 'なし') set('renovationLoan', false); }}>
+                <option>なし</option>
+                <option>あり</option>
+              </select>
+            </div>
+          )}
+          {form.side === '買主側' && form.planRenovation && (
+            <div className={styles.editField}>
+              <label className={styles.editLabel}>💳 リノベ費用をローンに含めるか</label>
+              <select className={styles.editSelect} value={form.renovationLoan ? 'あり' : 'なし'} onChange={e => set('renovationLoan', e.target.value === 'あり')}>
+                <option>なし</option>
+                <option>あり</option>
+              </select>
+            </div>
+          )}
+          {form.side === '売主側' && (
+            <div className={styles.editField}>
+              <label className={styles.editLabel}>🏢 オーナーチェンジ</label>
+              <select className={styles.editSelect} value={form.isOwnerChange ? 'あり' : 'なし'} onChange={e => set('isOwnerChange', e.target.value === 'あり')}>
+                <option>なし</option>
+                <option>あり</option>
+              </select>
+            </div>
+          )}
+        </div>
+      </div>
+
       <div className={styles.editActions}>
+        <button className={styles.editDeleteBtn} onClick={() => { if (window.confirm('このプロセスを削除しますか？')) onDelete(); }}>削除</button>
         <button className={styles.editCancelBtn} onClick={onCancel}>キャンセル</button>
         <button className={styles.editSaveBtn} onClick={() => onSave(form)}>保存</button>
       </div>
@@ -97,7 +147,7 @@ function CaseInfoEdit({ c, onSave, onCancel }) {
   );
 }
 
-export default function CaseDashboardPane({ selectedCase, onStageStatusChange, onUpdateCase }) {
+export default function CaseDashboardPane({ selectedCase, onUpdateCase, onReorderStages, onDeleteCase }) {
   const [selectedStageId, setSelectedStageId] = useState(null);
   const [topHeight, setTopHeight] = useState(null);
   const [editing, setEditing] = useState(false);
@@ -147,15 +197,13 @@ export default function CaseDashboardPane({ selectedCase, onStageStatusChange, o
     return (
       <div className={styles.empty}>
         <div className={styles.emptyIcon}>📋</div>
-        <div className={styles.emptyTitle}>案件を選択してください</div>
-        <div className={styles.emptyDesc}>左の一覧から案件を選ぶか、新規案件を作成してください</div>
+        <div className={styles.emptyTitle}>業務プロセスを選択してください</div>
+        <div className={styles.emptyDesc}>左の一覧からプロセスを選ぶか、新規生成してください</div>
       </div>
     );
   }
 
-  const selectedStage   = selectedCase.stages.find(s => s.id === selectedStageId) || null;
-  const completedStages = selectedCase.stages.filter(s => s.status === 'done').length;
-  const progress        = Math.round((completedStages / selectedCase.stages.length) * 100);
+  const selectedStage = selectedCase.stages.find(s => s.id === selectedStageId) || null;
   const statusStyle = STATUS_COLOR[selectedCase.status] || STATUS_COLOR['進行中'];
   const sideStyle   = SIDE_COLOR[selectedCase.side]     || SIDE_COLOR['売主側'];
 
@@ -196,6 +244,7 @@ export default function CaseDashboardPane({ selectedCase, onStageStatusChange, o
             c={selectedCase}
             onSave={handleSave}
             onCancel={() => setEditing(false)}
+            onDelete={() => { onDeleteCase && onDeleteCase(selectedCase.id); setEditing(false); }}
           />
         )}
 
@@ -220,11 +269,8 @@ export default function CaseDashboardPane({ selectedCase, onStageStatusChange, o
           </div>
         )}
 
-        <div className={styles.progressBar}>
-          <div className={styles.progressInner} style={{ width: `${progress}%` }} />
-        </div>
         <div className={styles.progressLabel}>
-          {completedStages}/{selectedCase.stages.length} 工程完了（{progress}%）
+          全{selectedCase.stages.length}工程
         </div>
       </div>
 
@@ -239,7 +285,7 @@ export default function CaseDashboardPane({ selectedCase, onStageStatusChange, o
             stages={selectedCase.stages}
             selectedStageId={selectedStageId}
             onSelectStage={setSelectedStageId}
-            onStatusChange={(stageId, status) => onStageStatusChange(selectedCase.id, stageId, status)}
+            onReorderStages={(newStages) => onReorderStages(selectedCase.id, newStages)}
           />
         </div>
       </div>
@@ -262,7 +308,13 @@ export default function CaseDashboardPane({ selectedCase, onStageStatusChange, o
             <StageDetailInline
               stage={selectedStage}
               caseSide={selectedCase.side}
-              onStatusChange={(status) => onStageStatusChange(selectedCase.id, selectedStage.id, status)}
+              caseConditions={{
+                propertyType:   selectedCase.propertyType,
+                hasMortgage:    selectedCase.hasMortgage,
+                planRenovation: selectedCase.planRenovation,
+                renovationLoan: selectedCase.renovationLoan,
+                isOwnerChange:  selectedCase.isOwnerChange,
+              }}
             />
           ) : (
             <div className={styles.detailEmpty}>

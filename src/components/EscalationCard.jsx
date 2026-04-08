@@ -4,30 +4,59 @@ import styles from './EscalationCard.module.css';
 const URGENCY_OPTIONS = ['通常', '急ぎ（3日以内）', '緊急（当日中）'];
 const CATEGORY_OPTIONS = ['法令・規制', '契約条件', '物件調査', '住宅ローン', '書類手続き', 'その他'];
 
-export default function EscalationCard({ question, caseContext, onDismiss }) {
+const ESCALATE_REASON_LABEL = {
+  ai_flagged:   'AIアシスタントが本社確認を推奨と判定しました。',
+  not_found:    'AIアシスタントでは回答できない内容でした。',
+  bad_rating:   '担当者がAIの回答を「役立たなかった」と評価しました。',
+  user_request: '担当者が本社への確認を希望しました。',
+};
+
+export default function EscalationCard({ question, aiResponse, escalateReason, caseContext, chatLog = [], onDismiss, onEscalate }) {
   const [urgency, setUrgency] = useState('通常');
   const [category, setCategory] = useState('その他');
   const [generated, setGenerated] = useState(false);
+
+  const chatLogText = chatLog
+    .filter(m => m.type !== 'intro')
+    .map(m => `[${m.role === 'user' ? '担当者' : 'AI'}] ${m.content.replace(/\n+/g, ' ')}`)
+    .join('\n');
+
+  const reasonText = ESCALATE_REASON_LABEL[escalateReason] || 'AIアシスタントへの確認後、本社への確認が必要と判断しました。';
+
+  const aiSection = aiResponse
+    ? `▼ AIアシスタントの回答（参考）
+${aiResponse}
+
+▼ 本社への確認事項
+AIの回答について、以下の観点からご確認をお願いいたします：
+・個別案件への適用可否
+・最新の法令・通達・社内基準との整合性
+・本件における対応方針のご指示`
+    : `▼ AIアシスタントの回答
+本件についてはAIアシスタントでの回答が困難でした。`;
 
   const draft = `件名：【${category}】に関する確認（${urgency}）
 
 お世話になっております。
 
-以下の件につきまして、ご確認をお願いいたします。
+AIアシスタントに確認しましたが、以下の内容について本社への確認が必要と判断しましたため、お問い合わせいたします。
+（エスカレーション理由：${reasonText}）
 
 ▼ 案件情報
 ・案件名：${caseContext?.name || '（未選択）'}
 ・現在工程：${caseContext?.stage || '（不明）'}
 ・売主/買主区分：${caseContext?.side || '（未選択）'}
 
-▼ 確認したい内容
+▼ 担当者からの質問
 ${question}
 
-▼ 既に確認した内容
-・社内ナレッジを確認しましたが、明確な回答が見つかりませんでした。
+${aiSection}
 
 ▼ 緊急度
 ${urgency}
+
+▼ チャット履歴ログ（問い合わせ時点）
+${chatLogText || '（履歴なし）'}
 
 以上、ご確認のほどよろしくお願いいたします。`;
 
@@ -72,6 +101,14 @@ ${urgency}
             <button className={styles.mailBtn}>
               ✉️ メールを開く
             </button>
+            {onEscalate && (
+              <button
+                className={styles.sendEscalateBtn}
+                onClick={() => { onEscalate(question, chatLog); }}
+              >
+                📨 エスカレーション送信
+              </button>
+            )}
           </div>
         </div>
       )}

@@ -143,6 +143,29 @@
   border-radius: 4px;
 }
 
+.escalateBadge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.escalateFromMsgBtn {
+  margin-left: auto;
+  background: none;
+  border: 1px solid #e5e7ef;
+  border-radius: 5px;
+  font-size: 11px;
+  color: #6b7280;
+  padding: 3px 9px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.12s;
+}
+.escalateFromMsgBtn:hover { border-color: #4f6ef7; color: #4f6ef7; background: #f0f3ff; }
+
 .bubbleContent {
   font-size: 13px;
   color: #374151;
@@ -276,4 +299,267 @@
 .sendBtn:disabled {
   background: #c7d2fe;
   cursor: not-allowed;
+}
+
+/* fullMode（質問対応タブ全幅表示） */
+.paneFullMode {
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* 評価ボタン */
+.ratingRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid #e8eaf0;
+}
+
+.ratingLabel {
+  font-size: 11px;
+  color: #9ca3af;
+  flex: 1;
+}
+
+.ratingBtn {
+  background: none;
+  border: 1px solid #e2e5ee;
+  border-radius: 5px;
+  padding: 3px 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+}
+
+.ratingBtn:hover {
+  background: #f3f4f6;
+}
+
+.ratingBtnActive {
+  background: #d1fae5;
+  border-color: #10b981;
+}
+
+.ratingBtnBad {
+  background: #fee2e2;
+  border-color: #ef4444;
+}
+
+.ratingFeedback {
+  font-size: 10px;
+  color: #10b981;
+  font-weight: 600;
+}
+
+.ratingFeedbackBad {
+  font-size: 10px;
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* 本社回答バブル */
+.hqBubble {
+  background: #eff6ff;
+  border-color: #93c5fd;
+}
+
+/* エスカレーション履歴パネル */
+.escalationHistory {
+  border-bottom: 1px solid #e5e7ef;
+  flex-shrink: 0;
+}
+
+.escalationHistoryToggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  background: #fef3c7;
+  border: none;
+  border-bottom: 1px solid #fcd34d;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #92400e;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: background 0.12s;
+}
+
+.escalationHistoryToggle:hover {
+  background: #fde68a;
+}
+
+.escalationHistoryIcon {
+  font-size: 14px;
+}
+
+.escalationHistoryArrow {
+  margin-left: auto;
+  font-size: 10px;
+}
+
+.pendingBadge {
+  background: #dc2626;
+  color: #fff;
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.escalationList {
+  background: #fffbeb;
+  max-height: 220px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.escalationItem {
+  padding: 10px 14px;
+  border-bottom: 1px solid #fde68a;
+}
+
+.escalationItemMeta {
+  font-size: 10px;
+  color: #9ca3af;
+  margin-bottom: 6px;
+}
+
+/* ─── チャット履歴ログ ─── */
+.chatLogSection {
+  margin-bottom: 6px;
+}
+
+.chatLogToggle {
+  background: none;
+  border: 1px solid #e5e7ef;
+  border-radius: 5px;
+  font-size: 11px;
+  color: #4f6ef7;
+  padding: 3px 10px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.1s;
+}
+.chatLogToggle:hover { background: #f0f3ff; }
+
+.chatLog {
+  margin-top: 6px;
+  background: #f8f9fb;
+  border: 1px solid #e5e7ef;
+  border-radius: 6px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.chatLogRow {
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.chatLogRole {
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 10px;
+}
+
+.chatLogUser .chatLogRole { background: #e0e7ff; color: #3730a3; }
+.chatLogAI   .chatLogRole { background: #d1fae5; color: #065f46; }
+
+.chatLogText {
+  color: #374151;
+  word-break: break-word;
+}
+
+.escalationAnswered {
+  background: #f0fdf4;
+}
+
+.escalationItemHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.escalationItemQ {
+  font-size: 12px;
+  color: #374151;
+  flex: 1;
+  line-height: 1.5;
+}
+
+.escalationStatus {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.escalationStatusPending {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.escalationStatusAnswered {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.hqReplyBox {
+  background: #eff6ff;
+  border: 1px solid #93c5fd;
+  border-radius: 5px;
+  padding: 8px 10px;
+  margin-top: 4px;
+}
+
+.hqReplyLabel {
+  font-size: 10px;
+  font-weight: 700;
+  color: #1e40af;
+  margin-bottom: 4px;
+}
+
+.hqReplyText {
+  font-size: 11px;
+  color: #1e3a8a;
+  line-height: 1.6;
+}
+
+.simulateReplyBtn {
+  margin-top: 6px;
+  background: #4f6ef7;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.12s;
+}
+
+.simulateReplyBtn:hover {
+  background: #3b5bdb;
 }
